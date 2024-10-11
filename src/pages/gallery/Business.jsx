@@ -1,5 +1,5 @@
 
-export default function Blog(){
+export default function Business(){
     return (
         <main><p>This is blog</p></main>
     )

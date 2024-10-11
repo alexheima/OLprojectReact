@@ -7,7 +7,7 @@ export default function About(){
  <p className='text-3xl text-center p-2 text-white' >About</p>
         <article className="flex flex-row flex-wrap justify-center gap-3 m-2" >
             <img src={me} alt="Alex Karamanov" className="w-80 "/>
-            <p className='w-80 text-white'>Alex Karamanov is a outdoor & portrait photographer based   in Martigny, Southwest of Switzerland.
+            <p className='w-80 text-white pl-2'>Alex Karamanov is a outdoor & portrait photographer based   in Martigny, Southwest of Switzerland.
                 <br/>  <br/>
 
                 By following his passion to photography, he captures authentic moments inspired by nature and pursuits visual storytelling: His work mainly focuses on the outdoors, adventure and lifestyle portraits. 

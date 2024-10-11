@@ -22,7 +22,7 @@ export default function RootLayout() {
       <main>
         <Outlet />
       </main>
-      <footer className="flex justify-center gap-4 bg-black flex-wrap">
+      <footer className="flex justify-center gap-4 bg-black flex-wrap pt-5 pb-2">
         <NavLink to="https://www.instagram.com/alex_karamanov">
           <img src={inst} alt="Instagram" className="max-h-5" />
         </NavLink>
