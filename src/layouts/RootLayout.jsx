@@ -7,7 +7,7 @@ import logo from "/Users/alexkaramanov/Desktop/OLprojectReact/src/assets/logo.pn
 export default function RootLayout() {
   return (
     <div>
-      <header className="bg-black flex flex-wrap justify-between items-center text-white m-4 p-8-4">
+      <header className="bg-black flex flex-wrap justify-between items-center text-white m-4 p-8-4 opacity-90">
         <div>
         <NavLink to="about"><img src={logo} alt="logo" className="w-24 block"/></NavLink> 
         </div>
@@ -22,17 +22,14 @@ export default function RootLayout() {
       <main>
         <Outlet />
       </main>
-      <footer className="flex justify-center gap-4 bg-black flex-wrap pt-5 pb-2">
-        <NavLink to="https://www.instagram.com/alex_karamanov">
-          <img src={inst} alt="Instagram" className="max-h-5" />
-        </NavLink>
-        <NavLink to="https://www.500px.com/alex_karamanov"> <img src={px} alt="500px" className="max-h-5" /></NavLink>
-        <NavLink to="https://www.stocksy.com/alexalina"><img src={stocksy} alt="Stocksy" className="max-h-5" /></NavLink>
-        <NavLink to="https://www.flickr.com/photos/alex_karamanov">
-        <img src={flickr} alt="Flickr" className="max-h-5" />
+      <footer className="flex justify-center gap-4 bg-black pt-5 pb-2 brightness-90 m-[0_auto] flex-row">
+        <NavLink to="https://www.instagram.com/alex_karamanov"><img src={inst} alt="Instagram" className="max-h-5 hover:scale-[1.1]" /></NavLink>
+        <NavLink to="https://www.500px.com/alex_karamanov"> <img src={px} alt="500px" className="max-h-5 hover:scale-[1.1]" /></NavLink>
+        <NavLink to="https://www.stocksy.com/alexalina"><img src={stocksy} alt="Stocksy" className="max-h-5 hover:scale-[1.1]" /></NavLink>
+        <NavLink to="https://www.flickr.com/photos/alex_karamanov"><img src={flickr} alt="Flickr" className="max-h-5 hover:scale-[1.1]" />
         </NavLink>
       </footer>
-      <p className="flex justify-center text-white brightness-90">2024 &copy; Alex Karamanov  </p> 
+      <NavLink to="/"><p className="flex justify-center text-white brightness-90 flex-wrap m-[0_auto] text-center" >2024 &copy; Alex Karamanov  </p> </NavLink>
     </div>
   );
 }
