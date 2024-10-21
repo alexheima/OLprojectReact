@@ -1,5 +1,4 @@
 import { NavLink,Outlet } from "react-router-dom";
-
 import travel from '/Users/alexkaramanov/Desktop/OLprojectReact/src/assets/travel.jpg'
 import portraits from '/Users/alexkaramanov/Desktop/OLprojectReact/src/assets/portraits.jpg'
 import family from '/Users/alexkaramanov/Desktop/OLprojectReact/src/assets/family.jpg'
