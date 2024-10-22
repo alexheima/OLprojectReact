@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {ChevronRight, ChevronLeft, X } from "lucide-react";
 import F1 from '/f1.jpg';
 import F2 from '/f2.jpg';
@@ -88,19 +88,55 @@ export default function Family() {
         : setSlideNumber(slideNumber + 1)
       }
 
+      useEffect(() => {
+        const close = (e) => {
+          if(e.key === 'Escape'){
+            handleCloseModal()
+          }
+        }
+        window.addEventListener('keydown', close)
+      return () => window.removeEventListener('keydown', close)
+    },[])
+
+   useEffect(() => {
+    const prev = (e) => {
+      if(e.key ==='ArrowLeft' ){
+     prevSlide()
+      }
+    }
+    window.addEventListener('keydown', prev)
+    return () => window.removeEventListener('keydown', prev)
+})
+
+useEffect(() => {
+  const next = (e) => {
+    if(e.key ==='ArrowRight' ){
+   nextSlide()
+    }
+  }
+  window.addEventListener('keydown', next)
+  return () => window.removeEventListener('keydown', next)
+})
    
     return (
 
         <div>
 
+
         {openModal && 
-          <div className='sliderWrap fixed flex bg-black/90 z-50 w-full items-center justify-center inset-0'>
-            <X icon={X} className='fixed flex top-10 right-10 cursor-pointer opacity-60 hover:opacity-100 text-white z-50 ' onClick={handleCloseModal}  />
-            <ChevronLeft icon={ChevronLeft} className='fixed flex -translate-y-1/2 left-10 top-1/2 cursor-pointer opacity-60 hover:opacity-100 text-white z-50' onClick={prevSlide} />
-            <ChevronRight icon={ChevronRight} className='fixed flex -translate-y-1/2 right-10 top-1/2 cursor-pointer opacity-60 hover:opacity-100 text-white z-50'  onClick={nextSlide} />
-            <div className='flex items-center justify-center'>
-              <img className="max-h-[95vh] " src={galleryImages[slideNumber].img} alt='' />
+          <div className='sliderWrap fixed flex bg-black/90 z-50 w-full items-center justify-center inset-0'  >
+            <X icon={X} className='fixed flex top-4 right-10 cursor-pointer opacity-60 hover:opacity-100 text-white z-50 ' onClick={handleCloseModal} />
+            <ChevronLeft icon={ChevronLeft} className='fixed flex -translate-y-1/2 left-[1.3vw] top-1/2 cursor-pointer opacity-60 hover:opacity-100 text-white z-40 '/>
+            <ChevronRight icon={ChevronRight} className='fixed flex -translate-y-1/2 right-[1.3vw] top-1/2 cursor-pointer opacity-60 hover:opacity-100 text-white z-40' />
+            <div className='flex items-center justify-center' >
+          
+            
+              <img className="max-h-[95vh] max-w-[80vw]" src={galleryImages[slideNumber].img} alt='' />
+              <div className='fixed w-1/2 h-full z-40 m-0 p-0 left-0' onClick={prevSlide} ></div>
+              <div className='fixed w-1/2 h-full z-40 m-0 p-0 right-0' onClick={nextSlide}></div>
             </div>
+            
+            <div></div>
           </div>
         }
   
@@ -110,23 +146,30 @@ export default function Family() {
         Total Slides: {galleryImages.length}
         <br /><br /> */}
   
-        <div className='flex flex-wrap items-center justify-center gap-2 m-[0_auto]'>
+        <div className='max-w-[98%] columns-1 sm:columns-2 md:columns-3 lg:columns-4  gap-3 m-auto'>
           {
             galleryImages && galleryImages.map((slide, index) => {
               return(
+           
                 <div 
-                  className='single' 
+                
+                  className='' 
                   key={index}
-                  onClick={ () => handleOpenModal(index) }
+                  onClick={ () => handleOpenModal(index)  }
                 >
-                  <img className="max-w-sm"src={slide.img} alt='' />
+             
+                  <img className="mb-4 break-inside-avoid w-full object-cover cursor-zoom-in"src={slide.img} alt='' />
+                 
                 </div>
+              
               )
             })
           }
         </div>
+
   
       </div>
+      
  
 //   <div>
 //     {data.map((item, index)=>{
@@ -140,3 +183,27 @@ export default function Family() {
    
 )
 }
+
+
+
+
+
+{/* <div className='flex flex-wrap items-center justify-center gap-2 m-[0_auto]'>
+{
+  galleryImages && galleryImages.map((slide, index) => {
+    return(
+ 
+      <div 
+        className='single' 
+        key={index}
+        onClick={ () => handleOpenModal(index) }
+      >
+        <img className="max-w-sm"src={slide.img} alt='' />
+      </div>
+    
+    )
+  })
+}
+</div>
+
+</div> */}
