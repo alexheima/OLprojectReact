@@ -9,53 +9,76 @@ import F6 from '/f6.jpg';
 
 export default function Family() {
 
-    const galleryImages =[{
-       
-        img: F1
-    },
-    {
-      
-        img: F2
-    },
-    {
-        
-        img: F3
-    },
-    {
-       
-        img: F4
-    },
-    {
-       
-        img: F5
-    },
-    {
-      
-        img: F6
-    },
-    { img: F1
-},
-{
-  
-    img: F2
-},
-{
-    
-    img: F3
-},
-{
-   
-    img: F4
-},
-{
-   
-    img: F5
-},
-{
-  
-    img: F6
-}
-]
+    const galleryImages = [
+      {
+        img: F1,
+      },
+      {
+        img: F2,
+      },
+      {
+        img: F3,
+      },
+      {
+        img: F4,
+      },
+      {
+        img: F5,
+      },
+      {
+        img: F6,
+      },
+      { img: F4 },
+      {
+        img: F5,
+      },
+      {
+        img: F6,
+      },
+      {
+        img: F3,
+      },
+      {
+        img: F2,
+      },
+      {
+        img: F1,
+      },
+      {
+        img: F3,
+      },
+      {
+        img: F2,
+      },
+      {
+        img: F1,
+      },
+      {
+        img: F6,
+      },
+      {
+        img: F4,
+      },
+      {
+        img: F5,
+      },
+      { img: F5 },
+      {
+        img: F6,
+      },
+      {
+        img: F4,
+      },
+      {
+        img: F2,
+      },
+      {
+        img: F1,
+      },
+      {
+        img: F3,
+      },
+    ];
     
 
 
@@ -146,7 +169,7 @@ useEffect(() => {
         Total Slides: {galleryImages.length}
         <br /><br /> */}
   
-        <div className='max-w-[98%] columns-1 sm:columns-2 md:columns-3 lg:columns-4  gap-3 m-auto'>
+        <div className='max-w-[98%] columns-1 sm:columns-1 md:columns-2 lg:columns-4  gap-3 m-auto'>
           {
             galleryImages && galleryImages.map((slide, index) => {
               return(
